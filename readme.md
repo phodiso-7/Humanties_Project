@@ -59,7 +59,7 @@ To assess our neural network, we plotted the **Receiver Operating Characteristic
 
 The **Area Under the Curve (AUC)** gives a single metric of overall model quality. An AUC close to 1.0 indicates strong performance.
 
-📊 **ROC Curve for Neural Network**
+ **ROC Curve for Neural Network**
 
 ![ROC Curve](images/roc_yosa.png)
 
