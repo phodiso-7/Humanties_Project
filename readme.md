@@ -5,7 +5,7 @@ In counseling, specifically in substance abuse recovery programs, clients often 
 This project builds a predictive pipeline using cleaned anonymous client data to identify clients at risk based on demographic, clinical, and psychosocial features. Decsion trees and Neural Networks were used in this project.
 
 
----
+----------------------------------------------------------------------------------
 
 ## Features Used
 
@@ -51,6 +51,18 @@ After identifying important features, we computed the **correlation matrix** to 
 **Training & Validation Loss Over Epochs**
 
 ![Loss Curve](images/loss_curve.gif)
+
+
+## Training vs. Validation Gap
+
+While the deep neural network achieved reasonable performance, we observed a growing gap between training and validation loss as epochs increased. This suggests potential **overfitting**, where the model starts to memorize training data rather than generalize well to unseen examples.
+
+To address this and improve interpretability, we explored a **Decision Tree classifier**. They are in fact particularly valuable in healthcare contexts because they provide **transparent, rule-based predictions**, allowing practitioners and counsellors to understand and trust the reasoning behind each prediction.
+
+ **Visualized Decision Tree Structure**
+
+
+
 
 
 
