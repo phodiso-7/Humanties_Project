@@ -92,7 +92,10 @@ We evaluated both a Deep Neural Network (DNN) and a Decision Tree classifier usi
 | **Recall (Complete)**        | 0.77        | 0.90           |
 | **F1-Score (Complete)**      | 0.80        | 0.81           |
 
-> **Priority**: In this context, we care most about **high precision when predicting "Not Complete"**. This ensures that when we flag someone as high-risk, we can be confident in that prediction, and allocate resources accordingly.
+> **Priority**: In this context, we care most about **high precision when predicting "Not Complete"**. This ensures that when we flag someone as high-risk, we can be confident in that prediction, and allocate resources accordingly. When our models predict that a client **will not complete** counseling:
+
+- The **Decision Tree** is correct about **93%** of the time (high precision).
+- The **DNN** is correct about **86%** of the time.
 
 
 
