@@ -53,6 +53,18 @@ After identifying important features, we computed the **correlation matrix** to 
 ![Loss Curve](images/loss_curve.gif)
 
 
+## Model Evaluation – ROC Curve
+
+To assess our neural network, we plotted the **Receiver Operating Characteristic (ROC) curve**. This curve visualizes the trade-off between true positive rate and false positive rate across classification thresholds.
+
+The **Area Under the Curve (AUC)** gives a single metric of overall model quality. An AUC close to 1.0 indicates strong performance.
+
+📊 **ROC Curve for Neural Network**
+
+![ROC Curve](images/roc_yosa.png)
+
+
+
 ## Training vs. Validation Gap
 
 While the deep neural network achieved reasonable performance, we observed a growing gap between training and validation loss as epochs increased. This suggests potential **overfitting**, where the model starts to memorize training data rather than generalize well to unseen examples.
@@ -61,6 +73,26 @@ To address this and improve interpretability, we explored a **Decision Tree clas
 
  **Visualized Decision Tree Structure**
 
+
+![ROC Curve](images/decision_tree.png)
+
+---------------------------------------------------------------------------------------------
+
+##  Model Comparison
+
+We evaluated both a Deep Neural Network (DNN) and a Decision Tree classifier using key performance metrics. While both models performed similarly in terms of overall accuracy, the **Decision Tree offered higher precision when predicting who would *not complete* counseling**, which aligns with our goal of intervening early with at-risk clients.
+
+| Metric                     | DNN         | Decision Tree |
+|----------------------------|-------------|----------------|
+| **Accuracy**               | 0.85        | 0.84           |
+| **Precision (Not Complete)** | **0.86**    | **0.93**       |
+| **Recall (Not Complete)**    | 0.90        | 0.81           |
+| **F1-Score (Not Complete)**  | 0.88        | 0.86           |
+| **Precision (Complete)**     | 0.83        | 0.74           |
+| **Recall (Complete)**        | 0.77        | 0.90           |
+| **F1-Score (Complete)**      | 0.80        | 0.81           |
+
+> **Priority**: In this context, we care most about **high precision when predicting "Not Complete"**. This ensures that when we flag someone as high-risk, we can be confident in that prediction, and allocate resources accordingly.
 
 
 
