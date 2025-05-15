@@ -2,7 +2,7 @@
 
 In counseling, specifically in substance abuse recovery programs, clients often discontinue treatment before completion. These dropouts can hinder recovery outcomes and strain support systems. By using machine learning to predict which clients are more likely to leave early, we can design proactive interventions to improve retention and care quality.
 
-This project builds a predictive pipeline using anonymous client data to identify clients at risk based on demographic, clinical, and psychosocial features. Decsion trees and Neural Networks were used in this project.
+This project builds a predictive pipeline using cleaned anonymous client data to identify clients at risk based on demographic, clinical, and psychosocial features. Decsion trees and Neural Networks were used in this project.
 
 
 ---
@@ -30,7 +30,27 @@ This project uses structured, interpretable features that are commonly associate
 
 To understand how each feature varies across clients who complete vs. those who drop out, we plotted distributions grouped by treatment outcome.
 
-🔍 **Example: Gender Distribution by Completion Status**
+**One of the features: Gender Distribution by Completion Status**
 
 ![Gender Distribution](images/gender.png)
+
+##  Feature Importance
+
+Not all of these features contribute equally to predicting whether a client will complete counseling. Some variables,such as prior rehab experience or arrest history, carry more weight in the model's decision-making process.
+
+To quantify this, we trained a **Random Forest** model, which naturally ranks features based on how much they reduce impurity across decision trees. This gives us a clear view of which attributes are most influential in predicting dropout.
+
+**Random Forest Feature Importance**
+
+![Feature Importance](images/feature_importance_yosa.png)
+
+## Correlation & Training the Model
+
+After identifying important features, we computed the **correlation matrix** to explore relationships between them. This helped us identify redundancy and dependencies among inputs before feeding them into more complex models. We observed that a shallow model (ANN) is ideal as most features have low correlation. The model was trained using binary cross-entropy loss and evaluated on both training and validation data.
+
+**Training & Validation Loss Over Epochs**
+
+![Loss Curve](images/loss_curve.gif)
+
+
 
